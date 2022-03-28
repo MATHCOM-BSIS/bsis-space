@@ -1,6 +1,7 @@
+import "./styles.css"
+
 import React, { useRef, useState } from "react";
 
-import { SignInMethod } from 'firebase/auth';
 import firebase from 'firebase/compat/app';
 import "firebase/compat/auth";
 import 'firebase/compat/firestore';
@@ -38,30 +39,38 @@ function SignIn(){
 }
 
 function Form() {
-  const [formValue, setFormValue] = useState("");
+  const [titleValue, setTitleValue] = useState("");
+  const [textValue, setTextValue] = useState("");
 
   const sendMessage = async (e) => {
     e.preventDefault();
     const { uid, photoURL } = auth.currentUser;
     const Ref = firestore.collection('messages');
     await Ref.add({
-      text: formValue,
+      title: titleValue,
+      text: textValue,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       wroteby: uid,
       pic: photoURL
     });
 
-    setFormValue("");
+    setTitleValue("");
+    setTextValue("");
   };
   return (
     <form onSubmit={sendMessage}>
       <input
-        value={formValue}
-        onChange={(e) => setFormValue(e.target.value)}
-        placeholder="Type a message..."
+        value={titleValue}
+        onChange={(e) => setTitleValue(e.target.value)}
+        placeholder="임금님 귀는 당나귀 귀!"
       />
-      <button type="submit" disabled={!formValue}>
-        Add
+      <input
+        value={textValue}
+        onChange={(e) => setTextValue(e.target.value)}
+        placeholder=""
+      />
+      <button type="submit" disabled={!titleValue||!textValue}>
+        소리치기
       </button>
     </form>
   );
@@ -82,7 +91,7 @@ function MessageList() {
 }
 
 function Item(props) {
-  const {text, createdAt, wroteby, pic} = props.message;
+  const {title, text, createdAt, wroteby, pic} = props.message;
 
   function getFormatDate(date) {
     var year = date.getFullYear();
@@ -100,6 +109,7 @@ function Item(props) {
           <img src={pic} alt="pic" />
         </div>
         <div className="text">
+          <p>{title}</p>
           <p>{text}</p>
         </div>
       </div>
