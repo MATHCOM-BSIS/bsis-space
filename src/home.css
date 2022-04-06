@@ -1,20 +1,3 @@
-@font-face {
-    font-family: 'Cafe24Ssurround';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-html, body {
-    margin: 0px;
-    height: 100%;
-}
-
-body {
-    background: #F0F3F7;
-    font-family: 'Cafe24Ssurround';
-}
-
 div#root {
     width: 100%;
     display: flex;
@@ -23,6 +6,8 @@ div#root {
 }
 
 main {
+    position: relative;
+    top: 70px;
     display: flex;
     flex-direction: column;
     width: 80%;

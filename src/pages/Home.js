@@ -10,6 +10,7 @@ import "firebase/compat/firestore";
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
+import { Query } from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAtwXhr3zI4tR3KKlg9305K5zVrkekkMiA",
@@ -42,7 +43,7 @@ function SignIn() {
 
 function MessageList() {
     const Ref = firestore.collection("messages");
-    const query = Ref.orderBy("createdAt");
+    const query = Ref.orderBy("createdAt", "desc");
     const [messages] = useCollectionData(query, { idField: "id" });
 
     return (
@@ -89,7 +90,6 @@ export default function Home() {
         <>
             {user ? (
                 <>
-                    <NavLink to="/Form">글쓰기</NavLink>
                     <MessageList />
                 </>
             ) : (
