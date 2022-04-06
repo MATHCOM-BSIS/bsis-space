@@ -1,4 +1,4 @@
-import "../styles.css";
+import "../home.css";
 
 import React, { useRef, useState } from "react";
 
@@ -74,8 +74,8 @@ function Item(props) {
                     <img src={pic} alt="pic" />
                 </div>
                 <div className="text">
-                    <p>{title}</p>
-                    <p>{text}</p>
+                    <p className="title">{title}</p>
+                    <p className="texts">{text}</p>
                 </div>
             </div>
         </>

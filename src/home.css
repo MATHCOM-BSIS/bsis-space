@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'twayair';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff') format('woff');
+    font-family: 'Cafe24Ssurround';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -12,7 +12,7 @@ html, body {
 
 body {
     background: #F0F3F7;
-    font-family: 'twayair';
+    font-family: 'Cafe24Ssurround';
 }
 
 div#root {
@@ -27,11 +27,14 @@ main {
     flex-direction: column;
     width: 80%;
     max-width: 500px;
+    padding-bottom: 100px;
 }
 
 div.message {
+    position: relative;
     margin-top: 20px;
     padding: 20px;
+    padding-bottom: 40px;
     border-radius: 25px;
     background: #F0F3F7;
     box-shadow:  35px 35px 70px #CCCFD2,
@@ -42,30 +45,24 @@ div.message {
     height: fit-content;
 }
 
+div.message div.text p {
+    word-wrap: break-word;
+}
+
+div.message div.text p.title {
+    font-size: 20px;
+    color: #00255B;
+}
+
+div.message div.text p.text {
+    font-size: 18px;
+}
+
 div.message div.pic img {
-    width: 25px;
-    height: 25px;
-}
-
-form {
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    max-width: 500px;
-}
-
-form div.inputs input {
-    border: none;
-    font-family: 'twayair';
-    border-radius: 25px;
-    background: #F0F3F7;
-    box-shadow: inset 5px 5px 10px #cccccc,
-                inset -5px -5px 10px #ffffff;
-    height: 50px;
-    padding: 10px;
-}
-
-form button {
-    font-family: 'twayair';
-    width: 80px;
+    position: absolute;
+    border-radius: 15px;
+    width: 30px;
+    height: 30px;
+    bottom: 25px;
+    right: 25px;
 }

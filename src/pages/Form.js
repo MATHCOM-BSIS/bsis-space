@@ -1,4 +1,4 @@
-import "../styles.css";
+import "../form.css";
 
 import React, { useState } from "react";
 
@@ -43,18 +43,18 @@ export default function Form() {
     };
     return (
         <form onSubmit={sendMessage}>
-            <div className="inputs">
-                <input
-                    value={titleValue}
-                    onChange={(e) => setTitleValue(e.target.value)}
-                    placeholder="임금님 귀는 당나귀 귀!"
-                />
-                <input
-                    value={textValue}
-                    onChange={(e) => setTextValue(e.target.value)}
-                    placeholder="평소에 하고싶었던 이야기들을 해보세요!"
-                />
-            </div>
+            <input
+                className="title"
+                value={titleValue}
+                onChange={(e) => setTitleValue(e.target.value)}
+                placeholder="임금님 귀는 당나귀 귀!"
+            />
+            <textarea
+                className="text"
+                value={textValue}
+                onChange={(e) => setTextValue(e.target.value)}
+                placeholder="평소에 하고싶었던 이야기들을 해보세요!"
+            />
             <button type="submit" disabled={!titleValue || !textValue}>
                 소리치기
             </button>
