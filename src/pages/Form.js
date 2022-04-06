@@ -47,16 +47,16 @@ export default function Form() {
                 className="title"
                 value={titleValue}
                 onChange={(e) => setTitleValue(e.target.value)}
-                placeholder="해운대 얼짱 전영근"
+                placeholder="승학산 얼짱 슈퍼울트라킹왕짱킹갓제러럴엠퍼러대일과학고 교장 전형근 센세"
             />
             <textarea
                 className="text"
                 value={textValue}
                 onChange={(e) => setTextValue(e.target.value)}
-                placeholder="평소에 하고싶었던 이야기들을 해보세요!"
+                placeholder="평소에 하고싶었지만 꺼내지 못한 이야기들을 해보세요!"
             />
             <button type="submit" disabled={!titleValue || !textValue}>
-                소리치기
+                Submit
             </button>
         </form>
     );

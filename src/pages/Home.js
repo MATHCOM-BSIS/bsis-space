@@ -91,6 +91,7 @@ export default function Home() {
             {user ? (
                 <>
                     <MessageList />
+                    <NavLink to="/Form" className="write">Write ✍️</NavLink>
                 </>
             ) : (
                 <SignIn />

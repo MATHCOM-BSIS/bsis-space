@@ -20,13 +20,29 @@ button.sign-in{
                 -15px -15px 30px #ffffff;
 }
 
+a.write{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    font-size: 23px;
+    color: #00255B;
+    padding: 20px;
+    border-radius: 15px;
+    border: none;
+    font-family: 'Cafe24Ssurround';
+    background-color: #EDF1F5;
+    box-shadow: 15px 15px 30px #cccccc,
+                -15px -15px 30px #ffffff;
+    text-decoration: none;
+}
+
 main {
     position: relative;
     top: 100px;
     display: flex;
     flex-direction: column;
     width: 80%;
-    max-width: 500px;
+    max-width: 800px;
     padding-bottom: 100px;
 }
 
