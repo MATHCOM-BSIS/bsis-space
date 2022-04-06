@@ -47,7 +47,7 @@ export default function Form() {
                 className="title"
                 value={titleValue}
                 onChange={(e) => setTitleValue(e.target.value)}
-                placeholder="임금님 귀는 당나귀 귀!"
+                placeholder="해운대 얼짱 전영근"
             />
             <textarea
                 className="text"

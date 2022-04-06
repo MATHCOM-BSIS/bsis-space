@@ -3,6 +3,19 @@ div#root {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+
+button{
+    font-size: 23px;
+    color: #00255B;
+    padding: 20px;
+    border-radius: 15px;
+    border: none;
+    font-family: 'Cafe24Ssurround';
+    background-color: #EDF1F5;
+    box-shadow: 15px 15px 30px #cccccc,
+                -15px -15px 30px #ffffff;
 }
 
 main {

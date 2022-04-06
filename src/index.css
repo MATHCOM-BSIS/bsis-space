@@ -18,6 +18,7 @@ body {
 header {
     z-index: 99999;
     position: fixed;
+    top: 0;
     background: #F0F3F7;
     display: flex;
     align-items: center;
