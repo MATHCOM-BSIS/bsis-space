@@ -10,7 +10,7 @@ const rootElement = document.getElementById("root");
 ReactDOM.render(
   <>
     <header>
-      <p>BSIS-SPACE</p>
+      <p>Bullein Board 🚀</p>
     </header>
     <BrowserRouter>
       <Routes>

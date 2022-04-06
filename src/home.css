@@ -3,10 +3,12 @@ div#root {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
-button{
+button.sign-in{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 23px;
     color: #00255B;
     padding: 20px;
@@ -20,7 +22,7 @@ button{
 
 main {
     position: relative;
-    top: 70px;
+    top: 100px;
     display: flex;
     flex-direction: column;
     width: 80%;
