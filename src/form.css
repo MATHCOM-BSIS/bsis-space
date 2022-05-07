@@ -20,20 +20,21 @@ form input, textarea{
     border: none;
     font-family: 'Cafe24Ssurround';
     border-radius: 25px;
-    background: #F0F3F7;
-    box-shadow: inset 20px 20px 60px #cccccc,
-                inset -20px -20px 60px #ffffff;
+    background: #ffffff;
+    box-shadow: inset 10px 10px 20px #d9d9d9,
+                inset -10px -10px 20px #ffffff;
 }
 
 form input.title{
-    font-size: 20px;
+    font-size: 18px;
     height: 50px;
     margin-bottom: 20px;
     padding: 20px 30px;
 }
 
 form textarea{
-    font-size: 18px;
+    font-size: 15px;
+    line-height: 25px;
     height: calc(100% - 250px);
     resize: none;
     padding: 30px;
@@ -49,7 +50,7 @@ form button {
     border-radius: 15px;
     border: none;
     font-family: 'Cafe24Ssurround';
-    background-color: #EDF1F5;
-    box-shadow: 15px 15px 30px #cccccc,
+    background-color: #ffffff;
+    box-shadow: 15px 15px 30px #d9d9d9,
                 -15px -15px 30px #ffffff;
 }
