@@ -31,3 +31,8 @@ header p {
     color: #00255B;
     font-size: 25px;
 }
+
+header p a{
+    text-decoration: none;
+    color: inherit;
+}
