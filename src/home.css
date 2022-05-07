@@ -15,8 +15,8 @@ button.sign-in{
     border-radius: 15px;
     border: none;
     font-family: 'Cafe24Ssurround';
-    background-color: #EDF1F5;
-    box-shadow: 15px 15px 30px #cccccc,
+    background-color: #ffffff;
+    box-shadow: 15px 15px 30px #d9d9d9,
                 -15px -15px 30px #ffffff;
 }
 
@@ -30,8 +30,8 @@ a.write{
     border-radius: 15px;
     border: none;
     font-family: 'Cafe24Ssurround';
-    background-color: #EDF1F5;
-    box-shadow: 15px 15px 30px #cccccc,
+    background-color: #ffffff;
+    box-shadow: 15px 15px 30px #d9d9d9,
                 -15px -15px 30px #ffffff;
     text-decoration: none;
 }
@@ -61,8 +61,8 @@ div.message {
     padding: 20px;
     padding-bottom: 40px;
     border-radius: 25px;
-    background: #F0F3F7;
-    box-shadow:  35px 35px 70px #CCCFD2,
+    background: #ffffff;
+    box-shadow:  35px 35px 70px #d9d9d9,
                 -35px -35px 70px #ffffff;
     display: flex;
     flex-direction: column;

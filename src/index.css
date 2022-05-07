@@ -11,7 +11,7 @@ html, body {
 }
 
 body {
-    background: #F0F3F7;
+    background: #ffffff;
     font-family: 'Cafe24Ssurround';
 }
 
@@ -19,11 +19,10 @@ header {
     z-index: 99999;
     position: fixed;
     top: 0;
-    background: #F0F3F7;
+    background: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 4px 10px 20px #CCCFD2;
     width: 100%;
     padding: 2.5px;
 }
