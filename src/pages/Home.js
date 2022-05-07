@@ -49,8 +49,12 @@ function MessageList() {
     return (
         <>
             <main>
-                {messages &&
-                    messages.map((msg) => <Item key={msg.id} message={msg} />)}
+                <div className="wrap">
+                    {messages &&
+                        messages.map((msg) => (
+                            <Item key={msg.id} message={msg} />
+                        ))}
+                </div>
             </main>
         </>
     );
@@ -91,7 +95,9 @@ export default function Home() {
             {user ? (
                 <>
                     <MessageList />
-                    <NavLink to="/Form" className="write">Write ✍️</NavLink>
+                    <NavLink to="/Form" className="write">
+                        Write ✍️
+                    </NavLink>
                 </>
             ) : (
                 <SignIn />

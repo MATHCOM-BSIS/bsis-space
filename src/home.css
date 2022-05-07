@@ -39,14 +39,23 @@ a.write{
 main {
     position: relative;
     top: 100px;
-    display: flex;
-    flex-direction: column;
     width: 80%;
     max-width: 800px;
     padding-bottom: 100px;
 }
 
+div.wrap{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+}
+
 div.message {
+    min-width: 40%;
+    max-width: 800px;
+    min-height: fit-content;
+    max-height: 100%;
     position: relative;
     margin-top: 20px;
     padding: 20px;
@@ -58,7 +67,6 @@ div.message {
     display: flex;
     flex-direction: column;
     align-items: left;
-    height: fit-content;
 }
 
 div.message div.text p {

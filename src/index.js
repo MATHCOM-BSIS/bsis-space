@@ -10,7 +10,7 @@ const rootElement = document.getElementById("root");
 ReactDOM.render(
   <>
     <header>
-      <p>Bullein Board 🚀</p>
+      <p>Bulletin Board 🚀</p>
     </header>
     <BrowserRouter>
       <Routes>
