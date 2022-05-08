@@ -69,6 +69,12 @@ div.message {
     align-items: left;
 }
 
+div.message div.text{
+    margin-bottom: 20px;
+    white-space: pre-line;
+    line-height: 20px;
+}
+
 div.message div.text p {
     word-wrap: break-word;
 }
@@ -78,8 +84,8 @@ div.message div.text p.title {
     color: #00255B;
 }
 
-div.message div.text p.text {
-    font-size: 18px;
+div.message div.text p.texts {
+    font-size: 15px;
 }
 
 div.message div.pic img {
