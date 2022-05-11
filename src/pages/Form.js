@@ -47,7 +47,7 @@ export default function Form() {
                 className="title"
                 value={titleValue}
                 onChange={(e) => setTitleValue(e.target.value)}
-                placeholder="평소에 하고싶었지만 꺼내지 못한 이야기들을 해보세요!"
+                placeholder="제목을 입력하세요"
             />
             <textarea
                 className="text"
@@ -56,7 +56,7 @@ export default function Form() {
                 placeholder="본 게시판은 익명성을 바탕으로 합니다.&#10;따라서 개인이나 단체에 대한 무분별한 비방, 도배와 홍보 등 부적절한 내용을 포함하는 게시물은 삭제될 수 있으며 법적인 문제가 발생하면 실명을 확인 할 수 있습니다."
             />
             <button type="submit" disabled={!titleValue || !textValue}>
-                Submit
+                🙉
             </button>
         </form>
     );

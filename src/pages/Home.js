@@ -96,7 +96,7 @@ export default function Home() {
                 <>
                     <MessageList />
                     <NavLink to="/Form" className="write">
-                        Write ✍️
+                        ✍️
                     </NavLink>
                 </>
             ) : (

@@ -18,6 +18,7 @@ button.sign-in{
     background-color: #ffffff;
     box-shadow: 15px 15px 30px #d9d9d9,
                 -15px -15px 30px #ffffff;
+    cursor: pointer;
 }
 
 a.write{
@@ -49,6 +50,10 @@ div.wrap{
     justify-content: center;
     grid-template-columns: 1fr 1fr;
     grid-gap: 40px;
+}
+
+a.write {
+    font-size: 30px;
 }
 
 div.message {
@@ -95,4 +100,13 @@ div.message div.pic img {
     height: 30px;
     bottom: 25px;
     right: 25px;
+}
+
+@media screen and (max-width: 550px) {
+    div.wrap{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 1fr;
+        grid-gap: 0px;
+    }
 }
