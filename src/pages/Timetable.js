@@ -4,19 +4,34 @@ import React, { useEffect, useState } from "react";
 
 
 export default class Timetable extends React.Component {
-    state = {
-        isLoding: true,
-        data: [],
-        error: null,
+    constructor(props) {
+        super(props);
+
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1;
+        var yyyy = today.getFullYear();
+        if(dd<10) {
+            dd = '0'+dd
+        }
+        if(mm<10) {
+            mm = '0'+mm
+        }
+        
+        this.state = {
+            isLoding: true,
+            data: [],
+            error: null,
+            date: yyyy+''+mm+''+dd,
+        }
     }
 
     fetchOnline() {
-        var rightNow = new Date();
-        var yyyymmdd = rightNow.toISOString().slice(0,10).replace(/-/g,"");
+        const {date} = this.state;
         const params = new Proxy(new URLSearchParams(window.location.search), {
             get: (searchParams, prop) => searchParams.get(prop),
         });
-        var url = "https://open.neis.go.kr/hub/hisTimetable?KEY=3c07c8b644464b768a20bc4370a8e842&Type=json&ATPT_OFCDC_SC_CODE=C10&SD_SCHUL_CODE=7150532&ALL_TI_YMD="+yyyymmdd+"&GRADE="+params.grade+"&CLASS_NM="+params.class;
+        var url = "https://open.neis.go.kr/hub/hisTimetable?KEY=3c07c8b644464b768a20bc4370a8e842&Type=json&ATPT_OFCDC_SC_CODE=C10&SD_SCHUL_CODE=7150532&ALL_TI_YMD="+date+"&GRADE="+params.grade+"&CLASS_NM="+params.class;
         fetch(url)
             .then(response => response.json())
             .then(dt => {
