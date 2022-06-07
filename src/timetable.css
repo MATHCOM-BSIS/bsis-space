@@ -5,3 +5,36 @@ main {
     max-width: 800px;
     padding-bottom: 100px;
 }
+
+table{
+    width: 80%;
+    max-width: 500px;
+    border-collapse: collapse;
+    margin-top: 30px;
+    border-radius: 20px;
+    box-shadow: 15px 15px 30px #d9d9d9,
+                -15px -15px 30px #ffffff;
+}
+
+th, td {
+    padding: 25px;
+    margin-left: 20px;
+}
+
+th {
+    font-size: 18px;
+    color: #00255B;
+    border-bottom: 3px solid #d9d9d9;
+}
+
+tr {
+    border-bottom: 1px dashed #eaeaea;
+}
+
+tr:last-child {
+    border: none;
+}
+
+td:last-child {
+    border-left: 3px dashed #d9d9d9;
+}
