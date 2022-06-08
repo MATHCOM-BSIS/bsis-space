@@ -98,6 +98,9 @@ export default function Home() {
                     <NavLink to="/Form" className="write">
                         ✍️
                     </NavLink>
+                    <NavLink to="/Search" className="search">
+                        🕓
+                    </NavLink>
                 </>
             ) : (
                 <SignIn />
