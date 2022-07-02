@@ -16,11 +16,43 @@ button.sign-in{
     border: none;
     font-family: 'Cafe24Ssurround';
     background-color: #ffffff;
-    box-shadow: 15px 15px 30px #d9d9d9,
-                -15px -15px 30px #ffffff;
+    box-shadow: 5px 5px 15px #d9d9d9,
+                -5px -5px 15px #ffffff;
     cursor: pointer;
 }
 
+div.navs {
+    position: fixed;
+    bottom: 30px;
+    right: 50px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+div#nav>a, div.navs>button {
+    width: 70px;
+    height: 70px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #00255B;
+    border-radius: 15px;
+    border: none;
+    font-family: 'Cafe24Ssurround';
+    background-color: #ffffff;
+    box-shadow: 5px 5px 15px #d9d9d9,
+                -5px -5px 15px #ffffff;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+div#nav{
+    opacity: 0;
+    transition: 0.1s;
+}
+
+/*
 a.write{
     width: 70px;
     height: 70px;
@@ -60,6 +92,7 @@ a.search{
                 -10px -10px 20px #ffffff;
     text-decoration: none;
 }
+*/
 
 main {
     position: relative;
@@ -87,8 +120,8 @@ div.message {
     padding-bottom: 40px;
     border-radius: 25px;
     background: #ffffff;
-    box-shadow:  35px 35px 70px #d9d9d9,
-                -35px -35px 70px #ffffff;
+    box-shadow:  10px 10px 40px #d9d9d9,
+                -10px -10px 40px #ffffff;
     display: flex;
     flex-direction: column;
     align-items: left;

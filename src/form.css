@@ -21,8 +21,8 @@ form input, textarea{
     font-family: 'Cafe24Ssurround';
     border-radius: 25px;
     background: #ffffff;
-    box-shadow: inset 10px 10px 20px #d9d9d9,
-                inset -10px -10px 20px #ffffff;
+    box-shadow: inset 5px 5px 20px #d9d9d9,
+                inset -5px -5px 20px #ffffff;
 }
 
 form input.title{
@@ -51,8 +51,8 @@ form button {
     border: none;
     font-family: 'Cafe24Ssurround';
     background-color: #ffffff;
-    box-shadow: 15px 15px 30px #d9d9d9,
-                -15px -15px 30px #ffffff;
+    box-shadow: 5px 5px 15px #d9d9d9,
+                -5px -5px 15px #ffffff;
     cursor: pointer;
 }
 

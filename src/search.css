@@ -17,8 +17,8 @@ form.search input{
     margin-bottom: 15px;
     border-radius: 25px;
     background: #ffffff;
-    box-shadow: inset 10px 10px 20px #d9d9d9,
-                inset -10px -10px 20px #ffffff;
+    box-shadow: inset 5px 5px 20px #d9d9d9,
+                inset -5px -5px 20px #ffffff;
 }
 
 a.link {

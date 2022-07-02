@@ -12,8 +12,8 @@ table{
     border-collapse: collapse;
     margin-top: 30px;
     border-radius: 20px;
-    box-shadow: 15px 15px 30px #d9d9d9,
-                -15px -15px 30px #ffffff;
+    box-shadow: 10px 10px 40px #d9d9d9,
+                -10px -10px 40px #ffffff;
 }
 
 th, td {

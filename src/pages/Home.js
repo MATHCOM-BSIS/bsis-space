@@ -90,17 +90,37 @@ function Item(props) {
 export default function Home() {
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
+    var menu = 0;
+    console.log(menu);
+    function toogle() {
+        if (menu == 0) {
+            document.getElementById("nav").style.opacity = "100";
+            menu = 1;
+            console.log(menu);
+        } else {
+            document.getElementById("nav").style.opacity = "0";
+            menu = 0;
+            console.log(menu);
+        }
+    }
     return (
         <>
             {user ? (
                 <>
                     <MessageList />
-                    <NavLink to="/Form" className="write">
-                        ✍️
-                    </NavLink>
-                    <NavLink to="/Search" className="search">
-                        🕓
-                    </NavLink>
+                    <div className="navs">
+                        <button className="toogle" onClick={toogle}>
+                            <ion-icon name="chevron-up-outline"></ion-icon>
+                        </button>
+                        <div id="nav">
+                            <NavLink to="/Form" className="write">
+                                ✍️
+                            </NavLink>
+                            <NavLink to="/Search" className="search">
+                                🕓
+                            </NavLink>
+                        </div>
+                    </div>
                 </>
             ) : (
                 <SignIn />
