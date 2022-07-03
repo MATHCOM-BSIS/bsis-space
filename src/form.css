@@ -1,11 +1,3 @@
-div#root {
-    width: 100%;
-    height: calc(100% - 90px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 form {
     position: relative;
     top: 70px;

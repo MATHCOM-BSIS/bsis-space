@@ -15,6 +15,14 @@ body {
     font-family: 'Cafe24Ssurround';
 }
 
+div#root {
+    width: 100%;
+    height: calc(100% - 90px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 header {
     z-index: 99999;
     position: fixed;

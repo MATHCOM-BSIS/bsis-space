@@ -1,16 +1,7 @@
-main {
-    position: relative;
-    top: 100px;
-    width: 80%;
-    max-width: 800px;
-    padding-bottom: 100px;
-}
-
 table{
     width: 80%;
     max-width: 500px;
     border-collapse: collapse;
-    margin-top: 30px;
     border-radius: 20px;
     box-shadow: 10px 10px 40px #d9d9d9,
                 -10px -10px 40px #ffffff;
@@ -18,7 +9,6 @@ table{
 
 th, td {
     padding: 25px;
-    margin-left: 20px;
 }
 
 th {

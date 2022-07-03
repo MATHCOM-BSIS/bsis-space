@@ -5,17 +5,23 @@
     font-style: normal;
 }
 
-div#root {
-    position: relative;
-}
-
 div.App {
     width: 100%;
+    height: calc(100% - 125px);
+    overflow: show;
     display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;
-    top: 89.5px;
+    margin-top: 89.5px;
+}
+
+table.meal th, table.meal td {
+    padding: 0 25px;
+}
+
+table.meal thead th {
+    padding: 25px;
 }
 
 table.meal th td:first-child {
