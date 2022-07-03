@@ -95,10 +95,12 @@ export default function Home() {
     function toogle() {
         if (menu == 0) {
             document.getElementById("nav").style.opacity = "100";
+            document.getElementsByClassName("toogle")[0].innerHTML="<ion-icon name='chevron-down-outline'></ion-icon>";
             menu = 1;
             console.log(menu);
         } else {
             document.getElementById("nav").style.opacity = "0";
+            document.getElementsByClassName("toogle")[0].innerHTML="<ion-icon name='chevron-up-outline'></ion-icon>";
             menu = 0;
             console.log(menu);
         }
@@ -113,11 +115,14 @@ export default function Home() {
                             <ion-icon name="chevron-up-outline"></ion-icon>
                         </button>
                         <div id="nav">
-                            <NavLink to="/Form" className="write">
-                                ✍️
+                            <NavLink to="/Meal" className="meal">
+                                🍚
                             </NavLink>
                             <NavLink to="/Search" className="search">
                                 🕓
+                            </NavLink>
+                            <NavLink to="/Form" className="write">
+                                ✍️
                             </NavLink>
                         </div>
                     </div>

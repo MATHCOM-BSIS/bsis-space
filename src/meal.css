@@ -5,30 +5,29 @@
     font-style: normal;
 }
 
-html, body {
-    margin: 0px;
-    height: 100%;
+div#root {
+    position: relative;
 }
 
-body {
-    background: #F0F3F7;
-    font-family: 'Cafe24Ssurround';
-}
-
-header {
-    z-index: 99999;
-    position: fixed;
-    top: 0;
-    background: #F0F3F7;
+div.App {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 4px 10px 20px #CCCFD2;
-    width: 100%;
-    padding: 2.5px;
+    position: fixed;
+    top: 89.5px;
 }
 
-header p {
-    color: #00255B;
-    font-size: 25px;
+table.meal th td:first-child {
+    width: 40px;
+}
+
+table.meal tr td:first-child {
+    width: 40px;
+    text-align: center;
+}
+
+table.meal pre {
+    font-family: 'Cafe24Ssurround';
+    line-height: 25px;
 }

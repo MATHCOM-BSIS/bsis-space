@@ -1,30 +1,87 @@
 import "../meal.css";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-import firebase from "firebase/compat/app";
-import "firebase/compat/auth";
-import "firebase/compat/firestore";
-import { useNavigate } from "react-router-dom";
+export default class Meal extends React.Component {
+    constructor(props) {
+        super(props);
 
-const firebaseConfig = {
-    apiKey: "AIzaSyAtwXhr3zI4tR3KKlg9305K5zVrkekkMiA",
-    authDomain: "bsis-space.firebaseapp.com",
-    projectId: "bsis-space",
-    storageBucket: "bsis-space.appspot.com",
-    messagingSenderId: "649970236418",
-    appId: "1:649970236418:web:f77dc789da6dac9c9e7b1b",
-};
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1;
+        var yyyy = today.getFullYear();
+        if (dd < 10) {
+            dd = "0" + dd;
+        }
+        if (mm < 10) {
+            mm = "0" + mm;
+        }
 
-const app = firebase.initializeApp(firebaseConfig);
-
-const auth = firebase.auth();
-const firestore = firebase.firestore();
-
-export default function Meal() {
-    return (
-        <form onSubmit={sendMessage}>
-            
-        </form>
-    );
+        this.state = {
+            isLoding: true,
+            data: [],
+            error: null,
+            date: yyyy + "" + mm + "" + dd,
+        };
+    }
+    fetchOnline() {
+        const { date } = this.state;
+        const API_KEY = "8dd95958b0d741cea4fa73b1866337f0";
+        fetch(
+            `https://open.neis.go.kr/hub/mealServiceDietInfo?KEY=${API_KEY}&Type=json&ATPT_OFCDC_SC_CODE=C10&SD_SCHUL_CODE=7150532&MLSV_YMD=${date}`
+        )
+            .then((response) => response.json())
+            .then((dt) => {
+                this.setState({
+                    data: dt.mealServiceDietInfo[1].row,
+                    isLoding: false,
+                });
+            })
+            .catch((error) => this.setState({ error, isLoding: false }));
+    }
+    componentDidMount() {
+        this.fetchOnline();
+    }
+    render() {
+        const { isLoding, data, error } = this.state;
+        const displayData = data.map((item) => {
+            var dishes = JSON.stringify(item.DDISH_NM).replace(/<br\s*[\/]?>/gi, "\n").replace(/"/gi, "").split('\n')
+            return (
+                <tr>
+                    <td>{item.MMEAL_SC_NM}</td>
+                    <td>
+                        <pre>
+                            {
+                                dishes.map((dish) => {
+                                    return dish.split('(')[0] + "\n"
+                                })
+                            }
+                        </pre>
+                    </td>
+                </tr>
+            );
+        });
+        return (
+            <div className="App">
+                <React.Fragment>
+                    {error ? (
+                        <p>ERROR! Please check if today is a weekday.</p>
+                    ) : null}
+                    {!isLoding ? (
+                        <table className="meal">
+                            <thead>
+                                <tr>
+                                    <th>급식</th>
+                                    <th>메뉴</th>
+                                </tr>
+                            </thead>
+                            <tbody>{displayData}</tbody>
+                        </table>
+                    ) : (
+                        <p>Loading...</p>
+                    )}
+                </React.Fragment>
+            </div>
+        );
+    }
 }

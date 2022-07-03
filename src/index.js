@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Form from "./pages/Form"
 import Timetable from "./pages/Timetable"
 import Search from "./pages/Search"
+import Meal from "./pages/Meal"
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
@@ -22,6 +23,7 @@ ReactDOM.render(
         <Route exact path="/Form" element={<Form />}></Route>
         <Route exact path="/Search" element={<Search />}></Route>
         <Route exact path="/Timetable" element={<Timetable />}></Route>
+        <Route exact path="/Meal" element={<Meal />}></Route>
       </Routes>
     </BrowserRouter>
   </>,
