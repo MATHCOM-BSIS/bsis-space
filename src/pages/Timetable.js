@@ -69,10 +69,10 @@ export default class Timetable extends React.Component {
                         <p>ERROR! Please check if today is a weekday.</p>
                     ) : null}
                     {!isLoding ? (
-                        <table>
+                        <table className="time">
                             <thead>
                                 <tr>
-                                    <th>CLASS NO.</th>
+                                    <th>NO.</th>
                                     <th>SUBJECT</th>
                                 </tr>
                             </thead>

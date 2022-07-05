@@ -34,5 +34,20 @@ table.meal tr td:first-child {
 
 table.meal pre {
     font-family: 'Cafe24Ssurround';
-    line-height: 25px;
+    font-size: 15px;
+}
+
+@media screen and (max-width: 600px) {
+    table.meal pre {
+        font-size: 13px;
+    }
+    table.meal th, table.meal td {
+        padding: 0 15px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    table.meal pre {
+        font-size: 12px;
+    }
 }

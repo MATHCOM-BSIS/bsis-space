@@ -43,6 +43,7 @@ export default class Meal extends React.Component {
         this.fetchOnline();
     }
     render() {
+        console.log(window.innerWidth);
         const { isLoding, data, error } = this.state;
         const displayData = data.map((item) => {
             var dishes = JSON.stringify(item.DDISH_NM).replace(/<br\s*[\/]?>/gi, "\n").replace(/"/gi, "").split('\n')

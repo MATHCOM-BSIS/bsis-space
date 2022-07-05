@@ -22,6 +22,15 @@ tr {
     border-bottom: 1px dashed #eaeaea;
 }
 
+table.time th td:first-child {
+    width: 60px;
+}
+
+table.time tr td:first-child {
+    width: 60px;
+    text-align: center;
+}
+
 tr:last-child {
     border: none;
 }
