@@ -7,10 +7,9 @@
 
 div.App {
     width: 100%;
-    height: calc(100% - 125px);
-    overflow: show;
+    height: calc(100% - 89.5px);
+    overflow: auto;
     display: flex;
-    align-items: center;
     justify-content: center;
     position: fixed;
     margin-top: 89.5px;

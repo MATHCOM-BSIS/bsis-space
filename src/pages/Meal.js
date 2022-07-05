@@ -53,7 +53,7 @@ export default class Meal extends React.Component {
                         <pre>
                             {
                                 dishes.map((dish) => {
-                                    return dish.split('(')[0] + "\n"
+                                    return dish + "\n"
                                 })
                             }
                         </pre>
