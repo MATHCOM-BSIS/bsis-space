@@ -63,26 +63,33 @@ export default class Timetable extends React.Component {
             );
         });
         return (
-            <div className="App">
-                <React.Fragment>
-                    {error ? (
-                        <p>ERROR! Please check if today is a weekday.</p>
-                    ) : null}
-                    {!isLoding ? (
-                        <table className="time">
-                            <thead>
-                                <tr>
-                                    <th>NO.</th>
-                                    <th>SUBJECT</th>
-                                </tr>
-                            </thead>
-                            <tbody>{displayData}</tbody>
-                        </table>
-                    ) : (
-                        <p>Loading...</p>
-                    )}
-                </React.Fragment>
-            </div>
+            <>
+                <header>
+                    <p>
+                        <a href="/#">오늘의 시간표 🕓</a>
+                    </p>
+                </header>
+                <div className="App">
+                    <React.Fragment>
+                        {error ? (
+                            <p>ERROR! Please check if today is a weekday.</p>
+                        ) : null}
+                        {!isLoding ? (
+                            <table className="time">
+                                <thead>
+                                    <tr>
+                                        <th>NO.</th>
+                                        <th>SUBJECT</th>
+                                    </tr>
+                                </thead>
+                                <tbody>{displayData}</tbody>
+                            </table>
+                        ) : (
+                            <p>Loading...</p>
+                        )}
+                    </React.Fragment>
+                </div>
+            </>
         );
     }
 }

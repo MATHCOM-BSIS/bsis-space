@@ -25,18 +25,23 @@ export default function Search() {
     const [gradeValue, setGradeValue] = useState("");
     const [classValue, setClassValue] = useState("");
     return (
-        <form className="search">
-            <input
-                className="grade"
-                placeholder="학년"
-                onChange={(e)=>setGradeValue(e.target.value)}
-            />
-            <input
-                className="class"
-                placeholder="반"
-                onChange={(e)=>setClassValue(e.target.value)}
-            />
-            <NavLink className='link' to={'../Timetable?grade='+gradeValue+'&class='+classValue}>GO 🕒</NavLink>
-        </form>
+        <>
+            <header>
+                <p><a href="/#">오늘의 시간표 🕓</a></p>
+            </header>
+            <form className="search">
+                <input
+                    className="grade"
+                    placeholder="학년"
+                    onChange={(e)=>setGradeValue(e.target.value)}
+                />
+                <input
+                    className="class"
+                    placeholder="반"
+                    onChange={(e)=>setClassValue(e.target.value)}
+                />
+                <NavLink className='link' to={'../Timetable?grade='+gradeValue+'&class='+classValue}>GO 🕒</NavLink>
+            </form>
+        </>
     );
 }

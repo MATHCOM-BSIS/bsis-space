@@ -14,9 +14,6 @@ import Meal from "./pages/Meal"
 const rootElement = document.getElementById("root");
 ReactDOM.render(
   <>
-    <header>
-      <p><a href="/#">BSIS-SPACE 🚀</a></p>
-    </header>
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<Home />}></Route>

@@ -109,6 +109,9 @@ export default function Home() {
         <>
             {user ? (
                 <>
+                    <header>
+                        <p><a href="/#">BSIS-SPACE 🚀</a></p>
+                    </header>
                     <MessageList />
                     <div className="navs">
                         <button className="toogle" onClick={toogle}>

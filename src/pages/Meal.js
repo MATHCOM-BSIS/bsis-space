@@ -65,6 +65,9 @@ export default class Meal extends React.Component {
         return (
             <div className="App">
                 <React.Fragment>
+                    <header>
+                        <p><a href="/#">오늘의 급식 🍚</a></p>
+                    </header>
                     {error ? (
                         <p>ERROR! Please check if today is a weekday.</p>
                     ) : null}
