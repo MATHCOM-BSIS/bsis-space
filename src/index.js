@@ -10,6 +10,7 @@ import Form from "./pages/Form"
 import Timetable from "./pages/Timetable"
 import Search from "./pages/Search"
 import Meal from "./pages/Meal"
+// import Apply from "./pages/Apply"
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(

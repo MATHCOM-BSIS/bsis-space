@@ -1,6 +1,8 @@
 {
   "short_name": "BSIS-SPACE",
   "name": "BSIS-SPACE",
+  "author": "@given_woo",
+  "description": "부산일과학고등학교 온라인 커뮤니티",
   "icons": [
     {
       "src": "favicon.ico",
@@ -19,7 +21,7 @@
     }
   ],
   "start_url": ".",
-  "display": "standalone",
+  "display": "fullscreen",
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }
