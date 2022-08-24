@@ -1,0 +1,94 @@
+/*Roots*/
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 300;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot?#iefix') format('embedded-opentype'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff') format('woff'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.ttf') format("truetype");
+    font-display: swap;
+}
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 500;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot?#iefix') format('embedded-opentype'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff') format('woff'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf') format("truetype");
+    font-display: swap;
+} 
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 700;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot?#iefix') format('embedded-opentype'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff') format('woff'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf') format("truetype");
+    font-display: swap;
+} 
+
+html, body {
+    font-family: 'GmarketSans';
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background-color: #FAFAFA;
+}
+
+div.nav-container {
+    z-index: 999999;
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #dbdbdb;
+    display: flex;
+    justify-content: center;
+}
+
+div.nav-container div.nav-wrap {
+    position: absolute;
+    width: 70%;
+    min-width: 920px;
+}
+
+div.nav-container p.nav-title {
+    position: relative;
+    font-weight: 700;
+    font-size: 20px;
+    top: 4px;
+    line-height: 0px;
+}
+
+div#root {
+    position: relative;
+    top: 70px;
+    width: 100%;
+    height: calc(100% - 70px);
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 1000px) { 
+    div.nav-container div.nav-wrap {
+        width: 57.5%;
+        min-width: 490px;
+    }
+}
+
+@media (max-width: 600px) {
+    div.nav-container div.nav-wrap {
+        width: 90%;
+        min-width: 90%;
+        padding-left: 0px 10px;
+    }
+}

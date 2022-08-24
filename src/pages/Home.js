@@ -113,10 +113,6 @@ function Timetable () {
         .then((res) => res.json())
         .then((dt) => setData(dt.hisTimetable[1].row));
 
-    var displayData = data && data.map((item) => {
-        <p>{item.PERIO}</p>
-    })
-
     return (
         <div className="timetable-container">
             {
@@ -137,6 +133,70 @@ function Timetable () {
     )
 }
 
+function Meal() {
+    const [data, setData] = useState();
+
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+    if (dd < 10) {
+        dd = "0" + dd;
+    }
+    if (mm < 10) {
+        mm = "0" + mm;
+    }
+    var date=yyyy+""+mm+""+dd;
+    var hour=today.getHours();
+
+    function now(hour) {
+        if(hour>=19||hour<=9)
+            return 2;
+        if(9<=hour&&hour<=14)
+            return 0;
+        if(14<=hour&&hour<=19)
+            return 1;
+    }
+
+    function now_text(n) {
+        if(n==0)
+            return "조식";
+        if(n==1)
+            return "점심";
+        if(n==2)
+            return "석식";
+    }
+
+    var meal_now = now(hour);
+    var meal_now_text = now_text(meal_now);
+
+    console.log(meal_now);
+
+    const API_KEY = "8dd95958b0d741cea4fa73b1866337f0";
+    const url = `https://open.neis.go.kr/hub/mealServiceDietInfo?KEY=${API_KEY}&Type=json&ATPT_OFCDC_SC_CODE=C10&SD_SCHUL_CODE=7150532&MLSV_YMD=${date}`
+    
+    fetch(url)
+        .then((res)=>res.json())
+        .then((dt) => setData(dt.mealServiceDietInfo[1].row[meal_now].DDISH_NM.replace(/<br\s*[\/]?>/gi, "\n").replace(/"/gi, "").split('\n')))
+
+    return (
+        <div className="meal-container">
+            {
+                data ? (
+                    <>
+                        <p className="meal-title">{`다음 급식은 '${meal_now_text}' 입니다.`}</p>
+                        {
+                            data.map((item) => <p className="meal-item">{item}</p>)
+                        }
+                    </>
+                ) : (
+                    <></>
+                )
+            }
+        </div>
+    )
+}
+
 export default function Home() {
     const [user] = useAuthState(auth);
     return (
@@ -145,7 +205,10 @@ export default function Home() {
                 {user ? (
                     <>
                         <MessageList/>
-                        <Timetable/>
+                        <div className="side-container">
+                            <Timetable/>
+                            <Meal/>
+                        </div>
                     </>
                 ) : (
                     <SignIn/>
