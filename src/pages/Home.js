@@ -10,7 +10,7 @@ import "firebase/compat/firestore";
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
-import { Query } from "firebase/firestore";
+import { FieldValue, Query } from "firebase/firestore";
 import userEvent from "@testing-library/user-event";
 
 const firebaseConfig = {
@@ -52,7 +52,7 @@ function MessageList() {
         <div className="message-container">
             {messages &&
                 messages.map((msg) => (
-                    <Item key={msg.id} message={msg} />
+                    <Item key={msg.id} message={msg} doc={msg.id} />
                 ))}
         </div>
     );
@@ -61,21 +61,30 @@ function MessageList() {
 function Item(props) {
     const { title, text, createdAt, wroteby, pic } = props.message;
 
-    function getFormatDate(date) {
-        var year = date.getFullYear();
-        var month = 1 + date.getMonth();
-        month = month >= 10 ? month : "0" + month;
-        var day = date.getDate();
-        day = day >= 10 ? day : "0" + day;
-        return year + "-" + month + "-" + day;
-    }
+    var today = new Date();
+    const createdDate = createdAt.toDate()
+    const sec = today.getSeconds() - createdDate.getSeconds();
+    const minutes = today.getMinutes() - createdDate.getMinutes();
+    const hours = today.getHours() - createdDate.getHours();
+    const days = today.getDate() - createdDate.getDate();
+
+    var ago = ''
+    if(days>0)
+        ago=`${days}days ago`
+    else if (hours>0)
+        ago=`${hours}hours ago`
+    else if (minutes>0)
+        ago=`${minutes}min ago`
+    else
+        ago=`${sec}sec ago`
 
     return (
         <>
             <div className="message">
                 <div className="title">
                     <img src={pic} alt="pic" />
-                    <p>{title}</p>
+                    <p className="title">{title}</p>
+                    <p className="ago">{ago}</p>
                 </div>
                 <p className="text">{text}</p>
             </div>
@@ -169,8 +178,6 @@ function Meal() {
 
     var meal_now = now(hour);
     var meal_now_text = now_text(meal_now);
-
-    console.log(meal_now);
 
     const API_KEY = "8dd95958b0d741cea4fa73b1866337f0";
     const url = `https://open.neis.go.kr/hub/mealServiceDietInfo?KEY=${API_KEY}&Type=json&ATPT_OFCDC_SC_CODE=C10&SD_SCHUL_CODE=7150532&MLSV_YMD=${date}`
