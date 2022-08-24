@@ -151,11 +151,11 @@ function Meal() {
 
     function now(hour) {
         if(hour>=19||hour<=9)
-            return 2;
-        if(9<=hour&&hour<=14)
             return 0;
-        if(14<=hour&&hour<=19)
+        if(9<=hour&&hour<=14)
             return 1;
+        if(14<=hour&&hour<=19)
+            return 2;
     }
 
     function now_text(n) {
