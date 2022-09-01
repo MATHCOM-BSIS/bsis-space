@@ -7,11 +7,14 @@ import { NavLink, useNavigate } from "react-router-dom";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import { FieldValue, Query } from "firebase/firestore";
 import userEvent from "@testing-library/user-event";
+
+import ProgressiveImage from "react-progressive-graceful-image";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAtwXhr3zI4tR3KKlg9305K5zVrkekkMiA",
@@ -52,44 +55,69 @@ function MessageList() {
         <div className="message-container">
             {messages &&
                 messages.map((msg) => (
-                    <Item key={msg.id} message={msg} doc={msg.id} />
+                    <Item message={msg} />
                 ))}
         </div>
     );
 }
 
-function Item(props) {
-    const { title, text, createdAt, wroteby, pic } = props.message;
+class Item extends React.Component {
+    constructor(props) {
+        super(props);
 
-    var today = new Date();
-    const createdDate = createdAt.toDate()
-    const sec = today.getSeconds() - createdDate.getSeconds();
-    const minutes = today.getMinutes() - createdDate.getMinutes();
-    const hours = today.getHours() - createdDate.getHours();
-    const days = today.getDate() - createdDate.getDate();
+        const { createdAt } = this.props.message;
 
-    var ago = ''
-    if(days>0)
-        ago=`${days}days ago`
-    else if (hours>0)
-        ago=`${hours}hours ago`
-    else if (minutes>0)
-        ago=`${minutes}min ago`
-    else
-        ago=`${sec}sec ago`
+        var today = new Date();
+        const createdDate = createdAt.toDate()
+        const sec = today.getSeconds() - createdDate.getSeconds();
+        const minutes = today.getMinutes() - createdDate.getMinutes();
+        const hours = today.getHours() - createdDate.getHours();
+        const days = today.getDate() - createdDate.getDate();
 
-    return (
-        <>
+        var ago = ''
+        if(days>0)
+            ago=`${days}days ago`
+        else if (hours>0)
+            ago=`${hours}hours ago`
+        else if (minutes>0)
+            ago=`${minutes}min ago`
+        else
+            ago=`${sec}sec ago`
+
+        this.state = {
+            time: ago,
+        }
+    }
+
+    render() {
+        const { title, text, pic, img } = this.props.message;
+        const { time } = this.state;
+        return (
             <div className="message">
-                <div className="title">
-                    <img src={pic} alt="pic" />
-                    <p className="title">{title}</p>
-                    <p className="ago">{ago}</p>
-                </div>
+                    <div className="title">
+                        <img src={pic} alt="pic" />
+                        <p className="title">{title}</p>
+                        <p className="ago">{time}</p>
+                    </div>
+                <>
+                    {img ? (
+                        <ProgressiveImage src={img} placeholder="./ipad2.jpg">
+                        {(src, loading) => (
+                            <img
+                            className={`image${loading ? " loading" : " loaded"}`}
+                            src={src}
+                            alt="sea beach"
+                            width="700"
+                            height="465"
+                            />
+                        )}
+                    </ProgressiveImage>
+                    ) : (<></>)}
+                </>
                 <p className="text">{text}</p>
             </div>
-        </>
-    );
+        );
+    }
 }
 
 function Timetable () {
@@ -218,7 +246,9 @@ export default function Home() {
                         </div>
                     </>
                 ) : (
-                    <SignIn/>
+                    <div className="signin-container">
+                        <SignIn/>
+                    </div>
                 )}
             </div>
         </>

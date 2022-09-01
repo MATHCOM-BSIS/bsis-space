@@ -7,6 +7,25 @@ div.main-container {
     grid-column-gap: 20px;
 }
 
+div.signin-container {
+    grid-column-end: span 12;
+    height: calc(100% - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.signin-container button {
+    font-family: 'GmarketSans';
+    font-weight: 700;
+    font-size: 15px;
+    background-color: #387ADE;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 1px solid #dbdbdb;
+}
+
 /*Messages*/
 div.message-container {
     grid-column-end: span 8;
@@ -47,6 +66,15 @@ div.message div.title p.ago {
     left: 5px;
 }
 
+div.message img.image {
+    margin-top: 15px;
+    border-radius: 8px;
+    width: auto;
+    width: auto;
+    max-width: 100%;
+    max-height: 300px;
+}
+
 div.message p.text {
     font-size: 12px;
     line-height: 20px;
@@ -69,12 +97,15 @@ div.timetable-container {
 div.timetable-container p.timetable-title {
     font-weight: 700;
     font-size: 20px;
-    line-height: 15px;
+    margin: 0;
+    margin-bottom: 10px;
 }
 
 div.timetable-container p.timetable-item {
     font-size: 15px;
-    line-height: 13px;
+    line-height: 20px;
+    margin: 0;
+    margin-bottom: 5px;
 }
 
 div.meal-container {
@@ -84,12 +115,15 @@ div.meal-container {
 div.meal-container p.meal-title {
     font-weight: 700;
     font-size: 20px;
-    line-height: 15px;
+    margin: 0;
+    margin-bottom: 10px;
 }
 
 div.meal-container p.meal-item {
     font-size: 15px;
-    line-height: 13px;
+    line-height: 20px;
+    margin: 0;
+    margin-bottom: 5px;
 }
 
 @media (max-width: 1000px) {
@@ -115,4 +149,12 @@ div.meal-container p.meal-item {
         width: 90%;
         min-width: 90%;
     }
+}
+
+.loading {
+  filter: blur(10px);
+}
+.loaded {
+  filter: blur(0px);
+  transition: filter 0.5s linear;
 }
