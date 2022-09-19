@@ -1,0 +1,25 @@
+div.timetable-container2 {
+    grid-column-end: span 12;
+    position: relative;
+    top: calc(50% - 70px);
+    transform: translateY(calc(-50% + 35px));
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #dbdbdb;
+    height: fit-content;
+}
+
+div.timetable-container input[type="date"] {
+    font-family: 'GmarketSans';;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+div.timetable-container div.divider {
+    height: 0px;
+    border-bottom: 1px solid #dbdbdb;
+    margin-bottom: 15px;
+}

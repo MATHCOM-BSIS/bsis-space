@@ -18,7 +18,7 @@ div.signin-container {
 div.signin-container button {
     font-family: 'GmarketSans';
     font-weight: 700;
-    font-size: 15px;
+    font-size: 13px;
     background-color: #387ADE;
     color: #fff;
     padding: 15px 20px;
@@ -39,6 +39,10 @@ div.message {
     border-radius: 8px;
 }
 
+div.message:first-child {
+    margin-top: 30px;
+}
+
 div.message div.title {
     border-bottom: 1px solid #dbdbdb;
     display: flex; 
@@ -48,7 +52,6 @@ div.message div.title {
    
 div.message div.title img {
     width: 25px;
-    height: 25px;
     border-radius: 50%;
     margin-right: 8px;
 }
@@ -68,15 +71,11 @@ div.message div.title p.ago {
 
 div.message img.image {
     margin-top: 15px;
-    border-radius: 8px;
-    width: auto;
-    width: auto;
-    max-width: 100%;
-    max-height: 300px;
+    border-radius: 5px;
 }
 
 div.message p.text {
-    font-size: 12px;
+    font-size: 13px;
     line-height: 20px;
     word-wrap: break-word;
 }
@@ -86,11 +85,13 @@ div.message p.text {
 div.side-container {
     grid-column-start: 10;
     grid-column-end: 15;
-    overflow-y: visible;
+    height: calc(100% - 51px);
+    padding-top: 30px;
+    overflow-x: visible;
 }
 
 div.timetable-container {
-    overflow-y: visible;
+    overflow-x: visible;
     margin-bottom: 40px;
 }
 
@@ -109,7 +110,7 @@ div.timetable-container p.timetable-item {
 }
 
 div.meal-container {
-    overflow-y: visible;
+    overflow-x: visible;
 }
 
 div.meal-container p.meal-title {
@@ -127,14 +128,6 @@ div.meal-container p.meal-item {
 }
 
 @media (max-width: 1000px) {
-    div.main-container {
-        width: 55%;
-        min-width: 470px;
-        height: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-column-gap: 20px;
-    }
     div.message-container {
         grid-column-start: 1;
         grid-column-end: 13;
@@ -145,16 +138,32 @@ div.meal-container p.meal-item {
 }
 
 @media (max-width: 600px) {
-    div.main-container {
-        width: 90%;
-        min-width: 90%;
+    div.message img.image {
+        width: auto;
     }
 }
 
-.loading {
-  filter: blur(10px);
+div.image {
+    width: auto;
+    display: inline-block;   
 }
+
+.loading {
+    position: relative;
+    left: -10px;
+    height: 300px;
+    width: auto;
+    max-width: 100%;
+    max-height: 300px;
+    filter: blur(10px);
+    clip-path: inset(10px round 5px);
+}
+
 .loaded {
-  filter: blur(0px);
-  transition: filter 0.5s linear;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 300px;
+    filter: blur(0px);
+    transition: filter 0.5s linear;
 }

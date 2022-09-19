@@ -47,7 +47,7 @@ body {
 div.nav-container {
     z-index: 999999;
     position: fixed;
-    height: 50px;
+    height: 60px;
     width: 100%;
     background-color: #fff;
     border-bottom: 1px solid #dbdbdb;
@@ -56,6 +56,7 @@ div.nav-container {
 }
 
 div.nav-container div.nav-wrap {
+    position: relative;
     width: 70%;
     height: 100%;
     min-width: 920px;
@@ -66,19 +67,51 @@ div.nav-container div.nav-wrap {
 
 div.nav-container div.nav-wrap p.nav-title {
     font-weight: 700;
-    font-size: 18px;
+    font-size: 20px;
+}
+
+div.nav-container div.nav-wrap div.icons {
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+div.nav-container div.nav-wrap div.icons a {
+    line-height: 0;
+}
+
+div.nav-container div.nav-wrap div.icons img {
+    height: 22px;
+    margin-left: 22px;
+}
+
+div.bottom-nav {
+    border-top: 1px solid #dbdbdb;
+    display: none;
 }
 
 div#root {
     position: relative;
-    top: 70px;
+    top: 60px;
     width: 100%;
-    height: calc(100% - 70px);
+    height: calc(100vh - 61px);
     display: flex;
     justify-content: center;
+    overflow-y: auto;
 }
 
 @media (max-width: 1000px) { 
+    div.main-container {
+        width: 60%;
+        min-width: 500px;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-column-gap: 20px;
+    }
+
     div.nav-container div.nav-wrap {
         width: 57.5%;
         min-width: 490px;
@@ -86,9 +119,56 @@ div#root {
 }
 
 @media (max-width: 600px) {
+    div.main-container {
+        width: 90%;
+        min-width: 90%;
+    }
+
+    div.nav-container {
+        height: 50px;
+    }
+
     div.nav-container div.nav-wrap {
         width: 90%;
         min-width: 90%;
         padding-left: 0px 10px;
+        justify-content: center;
+    }
+
+    div.nav-container div.nav-wrap div.icons {
+        display: none;
+    }
+
+    div#root {
+        top: 50px;
+        height: calc(100vh - 100px);
+    }
+
+    div.bottom-nav {
+        z-index: 999999;
+        position: fixed;
+        bottom: 0;
+        height: 50px;
+        width: 100%;
+        background-color: #fff;
+        border-bottom: 1px solid #dbdbdb;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+
+    div.bottom-nav div {
+        width: 25%;
+        display: flex;
+        justify-content: center;
+    }
+
+    div.bottom-nav div a {
+        line-height: 0;
+    }
+
+    div.bottom-nav div img {
+        height: 22px;
     }
 }

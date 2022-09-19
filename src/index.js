@@ -5,6 +5,7 @@ import { NavLink, BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Home from "./Components/Home";
 import Write from './Components/Write'
+import Timetable from './Components/Timetable';
 import "./index.css";
 
 const rootElement = document.getElementById("root");
@@ -16,6 +17,7 @@ ReactDOM.render(
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
         <Route exact path="/Write" element={<Write />}></Route>
+        <Route exact path="/Timetable" element={<Timetable />}></Route>
       </Routes>
     </BrowserRouter>
   </>,

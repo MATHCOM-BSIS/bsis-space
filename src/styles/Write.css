@@ -8,6 +8,9 @@ div.main-container {
 }
 
 div.form {
+    position: relative;
+    top: calc(50% - 50px);
+    transform: translateY(-50%);
     grid-column-end: span 12;
     height: fit-content;
     display: flex;
@@ -54,7 +57,7 @@ form textarea {
 div.buttons {
     display: flex;
     flex-direction: row;
-    justify-content: end;
+    justify-content: flex-end;
     margin-bottom: 20px;
 }
 
@@ -79,4 +82,11 @@ form button {
     padding: 5px 13px;
     border-radius: 5px;
     border: 1px solid #dbdbdb;
+}
+
+@media (max-width: 600px) {
+    form textarea {
+        font-size: 13px;
+        height: 250px;
+    }
 }

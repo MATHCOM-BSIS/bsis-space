@@ -34,7 +34,17 @@ function SignIn() {
     const signInWithGoogle = () => {
         alert('학년, 반 정보 확인을 위해 학교 계정으로 로그인 해주세요');
         const provider = new firebase.auth.GoogleAuthProvider();
-        auth.signInWithPopup(provider);
+        auth.signInWithPopup(provider)
+            .then((res) => {
+                if(res.user.email.split('@')[1]!='bsis.hs.kr'){
+                    alert("학교 계정으로 로그인 해주세요");
+                    auth.signOut().then(() => {
+                        console.log("logged out");
+                      }).catch((error) => {
+                        console.log(error);
+                      });
+                }
+            })
     };
 
     return (
@@ -90,7 +100,7 @@ class Item extends React.Component {
     }
 
     render() {
-        const { title, text, pic, img } = this.props.message;
+        const { title, text, pic, originalImg, compreesedImg, width, height } = this.props.message;
         const { time } = this.state;
         return (
             <div className="message">
@@ -99,21 +109,20 @@ class Item extends React.Component {
                         <p className="title">{title}</p>
                         <p className="ago">{time}</p>
                     </div>
-                <>
-                    {img ? (
-                        <ProgressiveImage src={img} placeholder="./ipad2.jpg">
+                <div className="image">
+                    {compreesedImg ? (
+                        <ProgressiveImage src={originalImg} placeholder={compreesedImg}>
                         {(src, loading) => (
                             <img
                             className={`image${loading ? " loading" : " loaded"}`}
                             src={src}
-                            alt="sea beach"
-                            width="700"
-                            height="465"
+                            width="300"
+                            height="150"
                             />
                         )}
                     </ProgressiveImage>
                     ) : (<></>)}
-                </>
+                </div>
                 <p className="text">{text}</p>
             </div>
         );
@@ -162,7 +171,8 @@ function Timetable () {
                     </>
                 ) : (
                     <>
-                        시간표 로딩중..
+                        <p className="timetable-title">{`${mm}월 ${dd}일 시간표`}</p>
+                        <p className="timetable-item">시간표 정보가 없습니다.</p>
                     </>
                 )
             }            
@@ -212,12 +222,12 @@ function Meal() {
     
     fetch(url)
         .then((res)=>res.json())
-        .then((dt) => setData(dt.mealServiceDietInfo[1].row[meal_now].DDISH_NM.replace(/<br\s*[\/]?>/gi, "\n").replace(/"/gi, "").split('\n')))
+        .then((dt) => setData(dt.mealServiceDietInfo[1].row[meal_now].DDISH_NM.replace(/<br\s*[\/]?>/gi, "\n").replace(/"/gi, "").split('\n')));
 
     return (
         <div className="meal-container">
             {
-                data ? (
+                (typeof data != "undefined") ? (
                     <>
                         <p className="meal-title">{`다음 급식은 '${meal_now_text}' 입니다.`}</p>
                         {
@@ -225,7 +235,10 @@ function Meal() {
                         }
                     </>
                 ) : (
-                    <></>
+                    <>
+                        <p className="meal-title">{`다음 급식은 '${meal_now_text}' 입니다.`}</p>
+                        <p className="timetable-item">급식 정보가 없습니다.</p>
+                    </>
                 )
             }
         </div>
