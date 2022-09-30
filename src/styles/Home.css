@@ -1,0 +1,169 @@
+div.main-container {
+    width: 65%;
+    min-width: 905px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+}
+
+div.signin-container {
+    grid-column-end: span 12;
+    height: calc(100% - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.signin-container button {
+    font-family: 'GmarketSans';
+    font-weight: 700;
+    font-size: 13px;
+    background-color: #387ADE;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 1px solid #dbdbdb;
+}
+
+/*Messages*/
+div.message-container {
+    grid-column-end: span 8;
+}
+
+div.message {
+    padding: 0px 20px 0px 20px;
+    margin-bottom: 15px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+}
+
+div.message:first-child {
+    margin-top: 30px;
+}
+
+div.message div.title {
+    border-bottom: 1px solid #dbdbdb;
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+}
+   
+div.message div.title img {
+    width: 25px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+div.message div.title p.title {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+div.message div.title p.ago {
+    color: #707070;
+    font-size: 10px;
+    position: relative;
+    top: 1px;
+    left: 5px;
+}
+
+div.message img.image {
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+div.message p.text {
+    font-size: 13px;
+    line-height: 20px;
+    word-wrap: break-word;
+}
+
+/*side*/
+
+div.side-container {
+    grid-column-start: 10;
+    grid-column-end: 15;
+    height: calc(100% - 51px);
+    padding-top: 30px;
+    overflow-x: visible;
+}
+
+div.timetable-container {
+    overflow-x: visible;
+    margin-bottom: 40px;
+}
+
+div.timetable-container p.timetable-title {
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+div.timetable-container p.timetable-item {
+    font-size: 15px;
+    line-height: 20px;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+div.meal-container {
+    overflow-x: visible;
+}
+
+div.meal-container p.meal-title {
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+div.meal-container p.meal-item {
+    font-size: 15px;
+    line-height: 20px;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 1000px) {
+    div.message-container {
+        grid-column-start: 1;
+        grid-column-end: 13;
+    }
+    div.side-container {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    div.message img.image {
+        width: auto;
+    }
+}
+
+div.image {
+    width: auto;
+    display: inline-block;   
+}
+
+.loading {
+    position: relative;
+    left: -10px;
+    height: 300px;
+    width: auto;
+    max-width: 100%;
+    max-height: 300px;
+    filter: blur(10px);
+    clip-path: inset(10px round 5px);
+}
+
+.loaded {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 300px;
+    filter: blur(0px);
+    transition: filter 0.5s linear;
+}
