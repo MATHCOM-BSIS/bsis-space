@@ -1,21 +1,27 @@
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
+import "./index.css"
+
 import ReactDOM from "react-dom";
 import { NavLink, BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import Home from "./Components/Home";
-import Write from './Components/Write'
-import "./index.css";
+import Home from "./pages/Home";
+import Form from "./pages/Form"
+import Timetable from "./pages/Timetable"
+import Search from "./pages/Search"
+import Meal from "./pages/Meal"
+// import Apply from "./pages/Apply"
 
 const rootElement = document.getElementById("root");
-const bodyEl = document.getElementsByTagName("body");
-
 ReactDOM.render(
   <>
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
-        <Route exact path="/Write" element={<Write />}></Route>
+        <Route exact path="/Form" element={<Form />}></Route>
+        <Route exact path="/Search" element={<Search />}></Route>
+        <Route exact path="/Timetable" element={<Timetable />}></Route>
+        <Route exact path="/Meal" element={<Meal />}></Route>
       </Routes>
     </BrowserRouter>
   </>,

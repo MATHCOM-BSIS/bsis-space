@@ -1,174 +1,46 @@
-/*Roots*/
 @font-face {
-    font-family: 'GmarketSans';
-    font-weight: 300;
+    font-family: 'Cafe24Ssurround';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
-    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot');
-    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot?#iefix') format('embedded-opentype'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.ttf') format("truetype");
-    font-display: swap;
 }
-@font-face {
-    font-family: 'GmarketSans';
-    font-weight: 500;
-    font-style: normal;
-    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot');
-    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot?#iefix') format('embedded-opentype'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf') format("truetype");
-    font-display: swap;
-} 
-@font-face {
-    font-family: 'GmarketSans';
-    font-weight: 700;
-    font-style: normal;
-    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot');
-    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot?#iefix') format('embedded-opentype'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf') format("truetype");
-    font-display: swap;
-} 
 
 html, body {
-    font-family: 'GmarketSans';
-    margin: 0;
-    padding: 0;
+    margin: 0px;
     height: 100%;
 }
 
 body {
-    background-color: #FAFAFA;
-}
-
-div.nav-container {
-    z-index: 999999;
-    position: fixed;
-    height: 60px;
-    width: 100%;
-    background-color: #fff;
-    border-bottom: 1px solid #dbdbdb;
-    display: flex;
-    justify-content: center;
-}
-
-div.nav-container div.nav-wrap {
-    position: relative;
-    width: 70%;
-    height: 100%;
-    min-width: 920px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-div.nav-container div.nav-wrap p.nav-title {
-    font-weight: 700;
-    font-size: 20px;
-}
-
-div.nav-container div.nav-wrap div.icons {
-    position: absolute;
-    right: 0;
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-}
-
-div.nav-container div.nav-wrap div.icons a {
-    line-height: 0;
-}
-
-div.nav-container div.nav-wrap div.icons img {
-    height: 22px;
-    margin-left: 22px;
-}
-
-div.bottom-nav {
-    border-top: 1px solid #dbdbdb;
-    display: none;
+    background: #ffffff;
+    font-family: 'Cafe24Ssurround';
 }
 
 div#root {
-    position: relative;
-    top: 60px;
     width: 100%;
-    height: calc(100vh - 61px);
+    height: calc(100% - 90px);
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    z-index: 99999;
+    position: fixed;
+    top: 0;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    overflow-y: auto;
+    width: 100%;
+    padding: 2.5px;
 }
 
-@media (max-width: 1000px) { 
-    div.main-container {
-        width: 60%;
-        min-width: 500px;
-        height: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-column-gap: 20px;
-    }
-
-    div.nav-container div.nav-wrap {
-        width: 57.5%;
-        min-width: 490px;
-    }
+header p {
+    color: #00255B;
+    font-size: 25px;
 }
 
-@media (max-width: 600px) {
-    div.main-container {
-        width: 90%;
-        min-width: 90%;
-    }
-
-    div.nav-container {
-        height: 50px;
-    }
-
-    div.nav-container div.nav-wrap {
-        width: 90%;
-        min-width: 90%;
-        padding-left: 0px 10px;
-        justify-content: center;
-    }
-
-    div.nav-container div.nav-wrap div.icons {
-        display: none;
-    }
-
-    div#root {
-        top: 50px;
-        height: calc(100vh - 100px);
-    }
-
-    div.bottom-nav {
-        z-index: 999999;
-        position: fixed;
-        bottom: 0;
-        height: 50px;
-        width: 100%;
-        background-color: #fff;
-        border-bottom: 1px solid #dbdbdb;
-        display: flex;
-        flex-direction: row-reverse;
-        align-items: center;
-        justify-content: center;
-    }
-
-    div.bottom-nav div {
-        width: 25%;
-        display: flex;
-        justify-content: center;
-    }
-
-    div.bottom-nav div a {
-        line-height: 0;
-    }
-
-    div.bottom-nav div img {
-        height: 22px;
-    }
+header p a{
+    text-decoration: none;
+    color: inherit;
 }
