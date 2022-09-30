@@ -1,0 +1,51 @@
+form {
+    position: relative;
+    top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 75%;
+    height: 100%;
+}
+
+form input, textarea{
+    border: none;
+    font-family: 'Cafe24Ssurround';
+    border-radius: 25px;
+    background: #ffffff;
+    box-shadow: inset 5px 5px 20px #d9d9d9,
+                inset -5px -5px 20px #ffffff;
+}
+
+form input.title{
+    font-size: 18px;
+    height: 50px;
+    margin-bottom: 20px;
+    padding: 20px 30px;
+}
+
+form textarea{
+    font-size: 15px;
+    line-height: 25px;
+    height: calc(100% - 250px);
+    resize: none;
+    padding: 30px;
+}
+
+form button {
+    font-size: 23px;
+    color: #00255B;
+    position: absolute;
+    bottom: 70px;
+    right: 30px;
+    padding: 20px;
+    border-radius: 15px;
+    border: none;
+    font-family: 'Cafe24Ssurround';
+    background-color: #ffffff;
+    box-shadow: 5px 5px 15px #d9d9d9,
+                -5px -5px 15px #ffffff;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 550px) {}
