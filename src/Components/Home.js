@@ -109,25 +109,25 @@ class Item extends React.Component {
         const { time } = this.state;
         return (
             <div className="message">
-                    <div className="title">
-                        <img src={pic} alt="pic" />
-                        <p className="title">{title}</p>
-                        <p className="ago">{time}</p>
-                    </div>
-                <div className="image">
-                    {compreesedImg ? (
-                        <ProgressiveImage src={originalImg} placeholder={compreesedImg}>
-                        {(src, loading) => (
-                            <img
-                            className={`image${loading ? " loading" : " loaded"}`}
-                            src={src}
-                            width="300"
-                            height="150"
-                            />
-                        )}
-                    </ProgressiveImage>
-                    ) : (<></>)}
+                <div className="title">
+                    <img src={pic} alt="pic" />
+                    <p className="title">{title}</p>
+                    <p className="ago">{time}</p>
                 </div>
+                {compreesedImg ? (
+                    <div className="image">
+                        <ProgressiveImage src={originalImg} placeholder={compreesedImg}>
+                            {(src, loading) => (
+                                <img
+                                className={`image${loading ? " loading" : " loaded"}`}
+                                src={src}
+                                width="300"
+                                height="150"
+                                />
+                            )}
+                        </ProgressiveImage>
+                    </div>
+                ) : (<></>)}
                 <p className="text">{text}</p>
             </div>
         );
