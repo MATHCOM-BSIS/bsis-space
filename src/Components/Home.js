@@ -17,15 +17,20 @@ import userEvent from "@testing-library/user-event";
 import ProgressiveImage from "react-progressive-graceful-image";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAtwXhr3zI4tR3KKlg9305K5zVrkekkMiA",
-    authDomain: "bsis-space.firebaseapp.com",
-    projectId: "bsis-space",
-    storageBucket: "bsis-space.appspot.com",
-    messagingSenderId: "649970236418",
-    appId: "1:649970236418:web:f77dc789da6dac9c9e7b1b",
+    apiKey: "AIzaSyCWCbJZQYXHMA_6SxZtdRRJ_GKvtrDKvFQ",
+    authDomain: "gwa-gall.firebaseapp.com",
+    projectId: "gwa-gall",
+    storageBucket: "gwa-gall.appspot.com",
+    messagingSenderId: "248926173412",
+    appId: "1:248926173412:web:51a0327557a40f052754f1"
 };
 
-const app = firebase.initializeApp(firebaseConfig);
+if(!firebase.apps.length){
+    firebase.initializeApp(firebaseConfig);
+}
+else {
+    firebase.app();
+}
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
